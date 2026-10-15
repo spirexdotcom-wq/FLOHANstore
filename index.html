@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flohan Store - Makanan Kering & Lezat</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-orange-600 tracking-wide">Flohan Store</h1>
+                <p class="text-xs text-gray-500">Kp Ciletuh, Desa Ciderum, Caringin, Bogor</p>
+            </div>
+            <!-- Tombol Keranjang -->
+            <button onclick="toggleCart()" class="relative bg-orange-500 text-white px-4 py-2 rounded-full shadow hover:bg-orange-600 transition flex items-center gap-2">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="hidden sm:inline">Keranjang</span>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-6 h-6 rounded-full flex items-center justify-center font-bold">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION / HALAMAN PERTAMA -->
+    <section class="bg-gradient-to-r from-orange-500 to-amber-500 text-white py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Selamat Datang di Flohan Store</h2>
+            <p class="text-lg md:text-xl mb-6 text-orange-100">Menyediakan berbagai macam makanan kering berkualitas tinggi seperti aneka cireng isi gurih dan kue kering lezat untuk menemani hari-harimu.</p>
+            <a href="#katalog" class="bg-white text-orange-600 font-bold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition inline-block">Lihat Katalog Produk</a>
+        </div>
+    </section>
+
+    <!-- KATALOG PRODUK -->
+    <main id="katalog" class="max-w-6xl mx-auto px-4 py-12">
+        <h3 class="text-2xl md:text-3xl font-bold text-center mb-2 text-gray-800">Katalog Produk Kami</h3>
+        <p class="text-center text-gray-500 mb-10">Pilih camilan favoritmu dan nikmati kelezatannya!</p>
+
+        <!-- Grid Produk -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <!-- Produk 1: Cireng Isi Keju -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition">
+                <div>
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1Xbhm3FtAHJ_iM6b8DSw3X5ybyYXu3-D8" alt="Cireng Isi Keju" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-orange-600 text-white text-xs px-2.5 py-1 rounded-md font-extrabold shadow-md tracking-wider">FLOHAN</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800">Cireng Isi Keju</h4>
+                        <p class="text-orange-600 font-bold mt-1">Rp 15.000</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <button onclick="addToCart('Cireng Isi Keju', 15000)" class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Pesan / Masuk Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produk 2: Cireng Isi Sosis -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition">
+                <div>
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1Xbhm3FtAHJ_iM6b8DSw3X5ybyYXu3-D8" alt="Cireng Isi Sosis" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-orange-600 text-white text-xs px-2.5 py-1 rounded-md font-extrabold shadow-md tracking-wider">FLOHAN</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800">Cireng Isi Sosis</h4>
+                        <p class="text-orange-600 font-bold mt-1">Rp 15.000</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <button onclick="addToCart('Cireng Isi Sosis', 15000)" class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Pesan / Masuk Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produk 3: Cireng Isi Ayam Suir -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition">
+                <div>
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1Xbhm3FtAHJ_iM6b8DSw3X5ybyYXu3-D8" alt="Cireng Isi Ayam Suir" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-orange-600 text-white text-xs px-2.5 py-1 rounded-md font-extrabold shadow-md tracking-wider">FLOHAN</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800">Cireng Isi Ayam Suir</h4>
+                        <p class="text-orange-600 font-bold mt-1">Rp 15.000</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <button onclick="addToCart('Cireng Isi Ayam Suir', 15000)" class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Pesan / Masuk Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produk 4: Cireng Isi Telur Ayam -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition">
+                <div>
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1Xbhm3FtAHJ_iM6b8DSw3X5ybyYXu3-D8" alt="Cireng Isi Telur Ayam" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-orange-600 text-white text-xs px-2.5 py-1 rounded-md font-extrabold shadow-md tracking-wider">FLOHAN</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800">Cireng Isi Telur Ayam</h4>
+                        <p class="text-orange-600 font-bold mt-1">Rp 15.000</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <button onclick="addToCart('Cireng Isi Telur Ayam', 15000)" class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Pesan / Masuk Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produk 5: Kue Nastar -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition">
+                <div>
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/12L_eAfy1g81t0TO-kVVXIM4OmF8GtHD-" alt="Kue Nastar" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-orange-600 text-white text-xs px-2.5 py-1 rounded-md font-extrabold shadow-md tracking-wider">FLOHAN</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800">Kue Nastar</h4>
+                        <p class="text-orange-600 font-bold mt-1">Rp 37.000</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <button onclick="addToCart('Kue Nastar', 37000)" class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Pesan / Masuk Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produk 6: Kue Kering Coklat -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition">
+                <div>
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/12L_eAfy1g81t0TO-kVVXIM4OmF8GtHD-" alt="Kue Kering Coklat" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-orange-600 text-white text-xs px-2.5 py-1 rounded-md font-extrabold shadow-md tracking-wider">FLOHAN</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800">Kue Kering Coklat</h4>
+                        <p class="text-orange-600 font-bold mt-1">Rp 50.000</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <button onclick="addToCart('Kue Kering Coklat', 50000)" class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Pesan / Masuk Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produk 7: Kue Stick Keju -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition">
+                <div>
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/12L_eAfy1g81t0TO-kVVXIM4OmF8GtHD-" alt="Kue Stick Keju" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-orange-600 text-white text-xs px-2.5 py-1 rounded-md font-extrabold shadow-md tracking-wider">FLOHAN</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800">Kue Stick Keju</h4>
+                        <p class="text-orange-600 font-bold mt-1">Rp 34.000</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <button onclick="addToCart('Kue Stick Keju', 34000)" class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Pesan / Masuk Keranjang
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6281947677498?text=Halo%20Flohan%20Store,%20saya%20ingin%20bertanya%20terkait%20produk" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition z-30 text-2xl">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-10 mt-16 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <h4 class="text-xl font-bold mb-2 text-orange-400">Flohan Store</h4>
+                <p class="text-sm text-gray-400">Kp Ciletuh, Desa Ciderum, Kec. Caringin, Kab. Bogor</p>
+                <p class="text-sm text-gray-400 mt-1">WhatsApp Tanya-Tanya: <a href="https://wa.me/6281947677498" class="text-green-400 underline">081947677498</a></p>
+            </div>
+            <!-- 2 Tombol Modal (Terms & Conditions & Privacy Policy) -->
+            <div class="flex gap-4">
+                <button onclick="openModal('tcModal')" class="bg-gray-700 px-4 py-2 rounded text-sm hover:bg-gray-600 transition">Terms & Condition</button>
+                <button onclick="openModal('ppModal')" class="bg-gray-700 px-4 py-2 rounded text-sm hover:bg-gray-600 transition">Privacy Policy</button>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
+            &copy; 2026 Flohan Store. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- MODAL KERANJANG & CHECKOUT -->
+    <div id="cartModal" class="fixed inset-0 bg-black/50 z-50 hidden flex justify-end">
+        <div class="bg-white w-full max-w-md h-full p-6 overflow-y-auto flex flex-col justify-between shadow-xl">
+            <div>
+                <div class="flex justify-between items-center border-b pb-4 mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Keranjang Belanja</h3>
+                    <button onclick="toggleCart()" class="text-gray-500 hover:text-gray-800 text-xl"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <!-- Daftar Item di Keranjang -->
+                <div id="cart-items" class="space-y-3 mb-4">
+                    <p class="text-gray-500 text-center py-4">Keranjang masih kosong.</p>
+                </div>
+            </div>
+
+            <!-- Bagian Form & Checkout -->
+            <div class="border-t pt-4">
+                <div class="flex justify-between font-bold text-lg mb-4">
+                    <span>Total:</span>
+                    <span id="cart-total" class="text-orange-600">Rp 0</span>
+                </div>
+
+                <!-- Form Isian Pembeli -->
+                <div id="checkout-form" class="space-y-3 mb-4">
+                    <h4 class="font-semibold text-sm text-gray-700">Informasi Pengiriman</h4>
+                    <input type="text" id="buyer-name" placeholder="Nama Lengkap" class="w-full border px-3 py-2 rounded text-sm focus:outline-orange-500">
+                    <textarea id="buyer-address" placeholder="Alamat Lengkap (Jalan, RT/RW, Patokan)" rows="2" class="w-full border px-3 py-2 rounded text-sm focus:outline-orange-500"></textarea>
+                    <input type="tel" id="buyer-phone" placeholder="Nomor Handphone / WhatsApp" class="w-full border px-3 py-2 rounded text-sm focus:outline-orange-500">
+                </div>
+
+                <!-- Informasi Rekening Pembayaran -->
+                <div class="bg-orange-50 border border-orange-200 p-3 rounded text-xs mb-4 text-orange-900">
+                    <p class="font-bold mb-1">Metode Pembayaran Transfer Bank:</p>
+                    <p>Bank BCA: <span class="font-mono font-bold">3521022661</span></p>
+                    <p>Atas Nama: <span class="font-bold">Ardi Zaenal Mutaqin</span></p>
+                </div>
+
+                <button onclick="checkout()" class="w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700 transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> Bayar Sekarang & Konfirmasi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL TERMS & CONDITIONS -->
+    <div id="tcModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-lg w-full p-6 rounded-xl shadow-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Terms and Conditions</h3>
+            <div class="text-sm text-gray-600 space-y-2 mb-6">
+                <p>1. Selamat datang di Flohan Store. Dengan mengakses dan berbelanja di situs web kami, Anda menyetujui syarat dan ketentuan yang berlaku.</p>
+                <p>2. Seluruh produk makanan (cireng isi dan kue kering) diproduksi secara higienis. Pastikan memeriksa pesanan sebelum melakukan pembayaran.</p>
+                <p>3. Pembayaran dilakukan via transfer ke rekening BCA atas nama Ardi Zaenal Mutaqin.</p>
+                <p>4. Setelah melakukan pembayaran, mohon mengirimkan bukti transfer melalui WhatsApp untuk mempercepat proses pengiriman.</p>
+            </div>
+            <button onclick="closeModal('tcModal')" class="w-full bg-orange-500 text-white py-2 rounded font-semibold">Tutup</button>
+        </div>
+    </div>
+
+    <!-- MODAL PRIVACY POLICY -->
+    <div id="ppModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-lg w-full p-6 rounded-xl shadow-xl max-h-[80vh] overflow-y-auto">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Privacy Policy</h3>
+            <div class="text-sm text-gray-600 space-y-2 mb-6">
+                <p>1. Kebijakan privasi ini menjelaskan bagaimana Flohan Store mengumpulkan dan melindungi informasi pribadi Anda.</p>
+                <p>2. Informasi seperti nama, alamat, dan nomor telepon yang Anda masukkan pada saat checkout hanya digunakan untuk keperluan pengiriman pesanan.</p>
+                <p>3. Kami berkomitmen untuk menjaga kerahasiaan data pribadi Anda dan tidak akan membagikannya kepada pihak ketiga tanpa izin.</p>
+            </div>
+            <button onclick="closeModal('ppModal')" class="w-full bg-orange-500 text-white py-2 rounded font-semibold">Tutup</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const modal = document.getElementById('cartModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+            alert(name + " berhasil ditambahkan ke keranjang!");
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartCount.innerText = cart.reduce((sum, item) => sum + item.qty, 0);
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-4">Keranjang masih kosong.</p>';
+                cartTotal.innerText = 'Rp 0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                let subtotal = item.price * item.qty;
+                total += subtotal;
+                html += `
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <div>
+                            <h5 class="font-semibold text-sm">${item.name}</h5>
+                            <p class="text-xs text-gray-500">Rp ${item.price.toLocaleString()} x ${item.qty}</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="fon
